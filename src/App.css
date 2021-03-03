@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Montserrat:ital,wght@1,500&display=swap');
+
 .App {
   text-align: center;
 }
@@ -41,4 +43,28 @@ body{
   background-image: url('assets/bg.png');
   background-position: center center;
   background-size: cover;
+}
+
+.heading {
+  font-size: 5rem;
+  font-family: 'DotGothic16', sans-serif;
+}
+.subheading {
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.yellow-duck{
+  width: 500px;
+  height: auto;
+  background-color: transparent;
+}
+.red-duck{
+  width: 300px;
+  height: auto;
+  
+
+}
+.green-duck{
+  width: 300px;
+  height: auto;
 }
