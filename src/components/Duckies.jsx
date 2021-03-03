@@ -52,8 +52,8 @@ function Duckies() {
 
     return(
         <>
-       <button onClick={start}><img className='yellow-duck' src="assets\duckie.png" alt="yellow rubber duckie with record symbol" /></button> 
-       <button onClick={stop}><img className='red-duck' src="assets\stop.png" alt="red rubber duckie with stop symbol" /></button>
+       <button onClick={start} disabled={isRecording} ><img className='yellow-duck' src="assets\duckie.png" alt="yellow rubber duckie with record symbol" /></button> 
+       <button onClick={stop} disabled={!isRecording}><img className='red-duck' src="assets\stop.png" alt="red rubber duckie with stop symbol" /></button>
        <button onClick={play}><img className='green-duck' src="assets\play.png" alt="green rubber duckie with play symbol"  /></button> 
       
         </>
