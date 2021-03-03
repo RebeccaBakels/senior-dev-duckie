@@ -56,7 +56,6 @@ body{
 .yellow-duck{
   width: 500px;
   height: auto;
-  background-color: transparent;
 }
 .red-duck{
   width: 300px;
@@ -67,4 +66,19 @@ body{
 .green-duck{
   width: 300px;
   height: auto;
+}
+
+button, button:hover, button:active {
+  background: transparent;
+  border: transparent ;
+}
+button:active>img {
+  background-image: url();
+}
+
+button:hover>img {
+ filter: grayscale(100%);
+}
+button>img {
+  transition: .5s;
 }
