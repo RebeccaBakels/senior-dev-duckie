@@ -55,21 +55,21 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 .yellow-duck{
-  width: 500px;
+  width: 70vh;
   height: auto;
 }
 .red-duck{
-  width: 300px;
+  width: 40vh;
   height: auto;
   
 
 }
 .green-duck{
-  width: 300px;
+  width: 40vh;
   height: auto;
 }
 .blue-duck {
-  width: 200px;
+  width: 30vh;
   height: auto;
 }
 
