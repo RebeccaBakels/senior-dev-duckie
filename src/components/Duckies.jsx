@@ -10,7 +10,7 @@ firebase.initializeApp(firebaseConfig);
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 const storageRef = firebase.storage().ref();
 
-function Duckies(props) {
+function Duckies() {
   const [isRecording, setIsRecording] = useState(false);
   const [isBlocked, setIsBlocked] = useState(false);
   const [blobURL, setBlobURL] = useState("");
@@ -65,10 +65,7 @@ function Duckies(props) {
     playback.play();
   };
 
-  //   const goDownload = () => {
-  //     const file = new Audio(blobURL)
-  //     file.download()
-  // }
+  
   useEffect(() => {
     navigator.getUserMedia(
       { audio: true },
@@ -88,7 +85,7 @@ function Duckies(props) {
       <button onClick={start} disabled={isRecording}>
         <img
           className="yellow-duck"
-          src="assets\duckie.png"
+          src={isRecording ? "assets/active.png" : "assets/duckie.png"}
           alt="yellow rubber duckie with record symbol"
         />
       </button>

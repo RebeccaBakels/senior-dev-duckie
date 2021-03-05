@@ -3,6 +3,13 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 function QuackModal(props) {
+  // const getQuack = () => {
+  //   var copyText = document.getElementById("quackBackText");
+  //   copyText.select();
+  //   copyText.setSelectionRange(0, 99999)
+  //   document.execCommand("copy");
+  //   alert("Copied the text: " + copyText.value);
+  // }
     return (
         <Modal
         {...props}
@@ -17,7 +24,7 @@ function QuackModal(props) {
         </Modal.Header>
         <Modal.Body>
           <h4>Copy and paste to send to your real duckie</h4>
-          <p>
+          <p id='quackBackText'>
             {props.quackBack}
           </p>
         </Modal.Body>

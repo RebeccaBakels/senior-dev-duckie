@@ -44,16 +44,16 @@ body{
   background-image: url('assets/bg.png');
   background-position: center center;
   background-size: cover;
+ 
 }
 
-.heading {
-  font-size: 5rem;
-  font-family: 'DotGothic16', sans-serif;
-}
-.subheading {
+/* .subheading-text {
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
-}
+  background-color: rgb(116, 234, 238);
+  text-align: center;
+} */
+
 .yellow-duck{
   width: 70vh;
   height: auto;
@@ -61,8 +61,6 @@ body{
 .red-duck{
   width: 40vh;
   height: auto;
-  
-
 }
 .green-duck{
   width: 40vh;
@@ -71,6 +69,14 @@ body{
 .blue-duck {
   width: 30vh;
   height: auto;
+}
+.menu-duck {
+  width: 10vh;
+  background: transparent;
+}
+.banner {
+  width: 120vh;
+  padding-bottom: 0%;
 }
 
 button, button:hover, button:active {
@@ -82,7 +88,7 @@ button:active>img {
 }
 
 button:hover>img {
- filter: grayscale(100%);
+ filter: grayscale(40%);
 }
 button>img {
   transition: .5s;
