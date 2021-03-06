@@ -118,3 +118,8 @@ button>img {
   background-color: #00bcd4;
   border-color: #007bff;
 }
+
+.login-container {
+  background: rgba(222, 251, 255, 0.75);
+  padding: 5%;
+}

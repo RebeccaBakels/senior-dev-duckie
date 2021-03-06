@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react' 
 import { useHistory } from "react-router-dom";
-import { Form, Col, Button, Row } from 'react-bootstrap';
+import { Form, Col, Button, Row, Container } from 'react-bootstrap';
 import firebase from 'firebase'
 import { UserContext } from '../App'
 
@@ -53,6 +53,7 @@ const Login = () => {
        
       
     return (
+      <Container className= 'login-container' >
         <Form
         noValidate validated={validated} onSubmit={handleSubmit}
         >
@@ -114,6 +115,8 @@ const Login = () => {
           </Col>
         </Form.Group>
       </Form>
+
+      </Container>
     )
 
 }

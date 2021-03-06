@@ -22,13 +22,6 @@ function App() {
       <Router>
     <QuackMenu/>
     <div className="App">
-      <img className="banner"
-          src="assets\banner.png"
-          alt="white banner that says Senior Dev Duckie">
-      </img>
-      <br/>
-      <div className='subheading'>
-      </div>
         <Switch>
         <Route path="/Login" component={Login}/>
         <Route path="/Signup" component={Signup}/>
