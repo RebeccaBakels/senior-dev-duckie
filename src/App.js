@@ -1,14 +1,25 @@
+import React, {useState, createContext} from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import firebase from 'firebase'
 
-import Home from './scenes/Home'
 import QuackMenu from './components/QuackMenu'
+import Home from './scenes/Home'
+import Login from './scenes/Login'
+import Signup from './scenes/Signup'
+import Quacks from './scenes/Quacks'
 
+import { firebaseConfig } from "./config";
+firebase.initializeApp(firebaseConfig);
 
+export const UserContext = createContext(null)
 
 function App() {
+  const [user, setUser] = useState(null)
   return (
     <>
+    <UserContext.Provider value={{user, setUser, firebase}}>
+      <Router>
     <QuackMenu/>
     <div className="App">
       <img className="banner"
@@ -18,12 +29,15 @@ function App() {
       <br/>
       <div className='subheading'>
       </div>
-      <Router>
         <Switch>
-        <Route path="/" component={Home}/> 
+        <Route path="/Login" component={Login}/>
+        <Route path="/Signup" component={Signup}/>
+        <Route path="/Quacks" component={Quacks}/>
+        <Route path="/" component={Home}/>
         </Switch>
-      </Router>
     </div>
+      </Router>
+    </UserContext.Provider>
     </>
   );
 }

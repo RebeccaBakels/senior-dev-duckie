@@ -1,10 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
+
 
 function QuackMenu() {
     return(
 <Dropdown style={{width: '10vh'}}>
-  <Dropdown.Toggle id="dropdown-basic">
+  <Dropdown.Toggle >
     <img
      className="menu-duck"
      src="assets\menu.png"
@@ -12,9 +14,10 @@ function QuackMenu() {
   </Dropdown.Toggle>
 
   <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">Login</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Sign Up</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">My Recordings</Dropdown.Item>
+    <Dropdown.Item><Link to="/Login">Login</Link></Dropdown.Item>
+    <Dropdown.Item ><Link to="/Signup">Sign Up</Link></Dropdown.Item>
+    <Dropdown.Item ><Link to="/Logout">Logout</Link></Dropdown.Item>
+    <Dropdown.Item ><Link to="/Quacks">My Quacks</Link></Dropdown.Item>
   </Dropdown.Menu>
 </Dropdown>
     )

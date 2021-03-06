@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useContext, useEffect, useState } from "react";
 import QuackModal from './QuackModal';
-import firebase from "firebase";
-
 import MicRecorder from "mic-recorder-to-mp3";
-import { firebaseConfig } from "../config";
-firebase.initializeApp(firebaseConfig);
+import { UserContext } from '../App'
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
-const storageRef = firebase.storage().ref();
 
 function Duckies() {
+  const { firebase } = useContext(UserContext)
+  const storageRef = firebase.storage().ref();
   const [isRecording, setIsRecording] = useState(false);
   const [isBlocked, setIsBlocked] = useState(false);
   const [blobURL, setBlobURL] = useState("");
