@@ -1,15 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 function QuackModal(props) {
-  // const getQuack = () => {
-  //   var copyText = document.getElementById("quackBackText");
-  //   copyText.select();
-  //   copyText.setSelectionRange(0, 99999)
-  //   document.execCommand("copy");
-  //   alert("Copied the text: " + copyText.value);
-  // }
+  const [copySuccess, setCopySuccess] = useState('');
+
+  const copyToClipBoard = async copyMe => {
+    try {
+      await navigator.clipboard.writeText(copyMe);
+      setCopySuccess(console.log('copied'));
+    } catch (err) {
+      setCopySuccess('Failed to copy!');
+    }
+  };
+
     return (
         <Modal
         {...props}
@@ -29,6 +33,13 @@ function QuackModal(props) {
           </p>
         </Modal.Body>
         <Modal.Footer>
+        <div>
+          <Button onClick={() => copyToClipBoard(props.quackBack)} size="lg">
+            Click here to copy
+          </Button>
+            {/* after copying see the message here */}
+            {copySuccess}
+        </div>
           <Button onClick={props.onHide} size="lg">Done</Button>
         </Modal.Footer>
       </Modal>

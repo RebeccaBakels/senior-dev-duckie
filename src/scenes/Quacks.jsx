@@ -40,7 +40,7 @@ function Quacks() {
         <h1 className='greeting' >Hello, {greeting} </h1>
         {quacks.map((quack) =>(
         <div key={quack.id}>
-        <a href={quack.URL}  >
+        <a href={quack.URL} >
         <img
           className="green-duck"
           src="assets\play.png"
