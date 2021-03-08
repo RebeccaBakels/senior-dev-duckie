@@ -54,6 +54,10 @@ const Login = () => {
       
     return (
       <Container className= 'login-container' >
+        <img className="banner"
+          src="assets\LoginBanner.png"
+          alt="white banner that says Login to Quack">
+        </img> 
         <Form
         noValidate validated={validated} onSubmit={handleSubmit}
         >
@@ -99,13 +103,14 @@ const Login = () => {
       
         <Form.Group as={Row}>
           <Col sm={{ span: 10, offset: 2 }}>
-            <Button type="submit" loading = {loading}>Login</Button>
+            <Button type="submit" size="lg" loading = {loading}>Login</Button>
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
           <Col sm={{ span: 10, offset: 2 }}>
           <Button ghost
           type="primary"
+          size="lg"
           loading={loading}
           onClick={() => loginWithGoogle()}
         >
