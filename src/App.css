@@ -75,14 +75,12 @@ font-family: 'DotGothic16', sans-serif;
 .menu-duck {
   width: 10vh;
   background: transparent;
-  display: flex;
-  align-content: flex-start;
 }
 .user-duck {
   width: 10vh;
   background: transparent;
   display: flex;
-  align-content: flex-end;
+  align-self: flex-end;
 }
 .banner {
   width: 120vh;
@@ -98,7 +96,7 @@ button:active>img {
 }
 
 button:hover>img {
- filter: grayscale(40%);
+ filter: grayscale(50%);
 }
 button>img {
   transition: .5s;
@@ -132,4 +130,8 @@ button>img {
 .login-container {
   background: rgba(222, 251, 255, 0.75);
   padding: 5%;
+}
+
+.btn{
+  border: none
 }

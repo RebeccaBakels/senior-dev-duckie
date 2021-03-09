@@ -48,7 +48,7 @@ function Quacks() {
           href={quack.URL}
         />
       </a>
-      <h3>Created:</h3>
+      {/* <h3>Created:</h3> */}
       </div>
       ))}
         </Container>

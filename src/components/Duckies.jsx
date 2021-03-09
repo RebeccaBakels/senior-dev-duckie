@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import QuackModal from './QuackModal';
+import QuackModal from "./QuackModal";
 import MicRecorder from "mic-recorder-to-mp3";
-import { UserContext } from '../App'
+import { UserContext } from "../App";
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 function Duckies() {
-  const { user, firebase } = useContext(UserContext)
+  const { user, firebase } = useContext(UserContext);
   const storageRef = firebase.storage().ref();
   const [isRecording, setIsRecording] = useState(false);
   const [isBlocked, setIsBlocked] = useState(false);
@@ -51,16 +51,21 @@ function Duckies() {
         audioRecordingRef.put(newRecording, metadata).then((snapshot) => {
           snapshot.ref.getDownloadURL().then((downloadURL) => {
             setQuackBack(`Quack me Back!\n${downloadURL}`);
-            fetch(`https://api-senior-dev-duckie.web.app/quacks/${user.uid}`, {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              }, 
-              body: JSON.stringify({downloadURL})
-           })
-           .then(res => res.json())
-           .then(data =>  console.log(data))
-           .catch(err => console.log('error:', err))
+            if (user) {
+              fetch(
+                `https://api-senior-dev-duckie.web.app/quacks/${user.uid}`,
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ downloadURL }),
+                }
+              )
+                .then((res) => res.json())
+                .then((data) => console.log(data))
+                .catch((err) => console.log("error:", err));
+            }
           });
         });
       })
@@ -72,7 +77,6 @@ function Duckies() {
     playback.play();
   };
 
-  
   useEffect(() => {
     navigator.getUserMedia(
       { audio: true },
