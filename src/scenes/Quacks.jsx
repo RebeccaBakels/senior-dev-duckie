@@ -1,6 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { UserContext } from '../App'
-import { Container, Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 
 function Quacks() {
