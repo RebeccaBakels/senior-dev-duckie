@@ -135,3 +135,26 @@ button>img {
 .btn{
   border: none
 }
+@media screen and (max-width: 500px) {
+  .banner {
+    width: 55vh;
+    padding-bottom: 0%;
+}
+.yellow-duck {
+  width: 40vh;
+  height: auto;
+}
+.red-duck {
+  width: 20vh;
+  height: auto;
+}
+.green-duck {
+  width: 20vh;
+  height: auto;
+}
+.blue-duck {
+  width: 20vh;
+  height: auto;
+}
+
+}
