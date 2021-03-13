@@ -20,31 +20,28 @@
   color: #61dafb;
 }
 
-
 body{
   background-image: url('assets/bg.png');
   background-position: center center;
   background-size: cover;
- 
 }
-
 .greeting {
 font-family: 'DotGothic16', sans-serif;
 }
 .yellow-duck{
-  width: 70vh;
+  width: 65vh;
   height: auto;
 }
 .red-duck{
-  width: 40vh;
+  width: 35vh;
   height: auto;
 }
 .green-duck{
-  width: 40vh;
+  width: 35vh;
   height: auto;
 }
 .blue-duck {
-  width: 30vh;
+  width: 25vh;
   height: auto;
 }
 .menu-duck {
@@ -58,7 +55,7 @@ font-family: 'DotGothic16', sans-serif;
   align-self: flex-end;
 }
 .banner {
-  width: 120vh;
+  width: 110vh;
   padding-bottom: 0%;
 }
 
@@ -101,10 +98,20 @@ button>img {
   background-color: #00bcd4;
   border-color: #007bff;
 }
+a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 3vh;
+}
 
 .login-container {
   background: rgba(222, 251, 255, 0.75);
   padding: 5%;
+}
+.dropdown-menu.show {
+  display: block;
+  background-color: #74baba;
 }
 
 .btn{

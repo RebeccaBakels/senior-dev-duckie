@@ -1,97 +1,107 @@
-import React, {useContext, useState} from 'react' 
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Form, Col, Button, Row, Container } from 'react-bootstrap';
-import firebase from 'firebase'
-import { UserContext } from '../App'
+import { Form, Col, Button, Row, Container } from "react-bootstrap";
+import firebase from "firebase";
+import { UserContext } from "../App";
 
 const Login = () => {
   const [validated, setValidated] = useState(false);
-  const [loading, setLoading] = useState(false)
-  const { setUser } = useContext(UserContext)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  let history = useHistory()
+  const [loading, setLoading] = useState(false);
+  const { setUser } = useContext(UserContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  let history = useHistory();
 
   const onFinish = () => {
-     setLoading(true)
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(res => {
-          console.log('got back', res.user)
-          setUser(res.user)
-          setLoading(false)
-          history.push("/")
-        })
-        .catch(err => {
-          setLoading(false)
-          console.log(err)
-        })
-      }
-      const loginWithGoogle = () => {
-        setLoading(true)
-        const provider = new firebase.auth.GoogleAuthProvider()
-        firebase.auth().signInWithPopup(provider)
-        .then(res => {
-          setUser(res.user)
-          console.log(res.user)
-          setLoading(false)
-          history.push("/")
-        })
-        .catch(err => { 
-          setLoading(false)
-          console.log(err)
-        })
-      }
-      const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        event.preventDefault();
-        if (form.checkValidity() === false) {
-          event.stopPropagation();
-        }
-        setValidated(true)
-        onFinish()
-      };
-       
-      
-    return (
-      <Container className= 'login-container' >
-        <img className="banner"
-          src="assets\LoginBanner.png"
-          alt="white banner that says Login to Quack">
-        </img> 
-        <Form
-        noValidate validated={validated} onSubmit={handleSubmit}
-        >
-        <br/>
-        <br/>
-        <Form.Group as={Row} controlId="formHorizontalEmail">
-       
+    setLoading(true);
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((res) => {
+        console.log("got back", res.user);
+        setUser(res.user);
+        setLoading(false);
+        history.push("/");
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err);
+      });
+  };
+  const loginWithGoogle = () => {
+    setLoading(true);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((res) => {
+        setUser(res.user);
+        console.log(res.user);
+        setLoading(false);
+        history.push("/");
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err);
+      });
+  };
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    event.preventDefault();
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+    }
+    setValidated(true);
+    onFinish();
+  };
 
+  return (
+    <Container className="login-container">
+      <img
+        className="banner"
+        src="assets\LoginBanner.png"
+        alt="white banner that says Login to Quack"
+      ></img>
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <br />
+        <br />
+        <Form.Group as={Row} controlId="formHorizontalEmail">
           <Form.Label column sm={2}>
             Email
           </Form.Label>
           <Col sm={10}>
-            <Form.Control type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}
-            rules={[
-              {
-                required: true,
-                message: 'Please input your email',
-              },
-            ]} />
+            <Form.Control
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your email",
+                },
+              ]}
+            />
           </Col>
         </Form.Group>
-      
+
         <Form.Group as={Row} controlId="formHorizontalPassword">
           <Form.Label column sm={2}>
             Password
           </Form.Label>
           <Col sm={10}>
-            <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}
-            rules={[
-              {
-                required: true,
-                message: 'Please input your password',
-              },
-            ]} />
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your password",
+                },
+              ]}
+            />
           </Col>
         </Form.Group>
 
@@ -100,30 +110,30 @@ const Login = () => {
             <Form.Check label="Remember me" />
           </Col>
         </Form.Group>
-      
+
         <Form.Group as={Row}>
           <Col sm={{ span: 10, offset: 2 }}>
-            <Button type="submit" size="lg" loading = {loading}>Login</Button>
+            <Button type="submit" size="lg" loading={loading}>
+              Login
+            </Button>
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
           <Col sm={{ span: 10, offset: 2 }}>
-          <Button ghost
-          type="primary"
-          size="lg"
-          loading={loading}
-          onClick={() => loginWithGoogle()}
-        >
-        Login with Google        
-        </Button>
-
+            <Button
+              ghost
+              type="primary"
+              size="lg"
+              loading={loading}
+              onClick={() => loginWithGoogle()}
+            >
+              Login with Google
+            </Button>
           </Col>
         </Form.Group>
       </Form>
+    </Container>
+  );
+};
 
-      </Container>
-    )
-
-}
-
-export default Login
+export default Login;

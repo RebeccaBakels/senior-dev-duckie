@@ -1,4 +1,4 @@
-import React, {useState, createContext} from 'react'
+import React, {useState, createContext, useLayoutEffect, useEffect} from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import firebase from 'firebase'
@@ -16,6 +16,30 @@ export const UserContext = createContext(null)
 
 function App() {
   const [user, setUser] = useState(null)
+
+  useEffect(()=> {
+    if(user){
+      const newUser = {
+        displayName: user.displayName,
+        email: user.email,
+        uid: user.uid,
+        photoURL: user.photoURL,
+      }
+      localStorage.setItem('user', JSON.stringify(newUser))  
+    }
+
+  }, [user])
+
+  useEffect(()=> {
+    if(!user){
+      const localUser = JSON.parse(localStorage.getItem('user'))
+      if(localUser){
+        setUser(localUser)
+      }
+    }
+
+  },[])
+
   return (
     <>
     <UserContext.Provider value={{user, setUser, firebase}}>

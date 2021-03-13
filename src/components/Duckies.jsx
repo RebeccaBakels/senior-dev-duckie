@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import QuackModal from "./QuackModal";
 import MicRecorder from "mic-recorder-to-mp3";
 import { UserContext } from "../App";
+import 'firebase/storage'
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
@@ -78,6 +79,7 @@ function Duckies() {
   };
 
   useEffect(() => {
+    
     navigator.getUserMedia(
       { audio: true },
       () => {

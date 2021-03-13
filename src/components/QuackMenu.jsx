@@ -11,12 +11,13 @@ function QuackMenu() {
       .signOut()
       .then(() => {
         setUser(null);
+        localStorage.setItem("user", null);
       })
       .catch((error) => console.log(error));
   }
   return (
     <>
-      <div style={{ display: "flex", justifyContent: 'space-between' }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
           <Dropdown style={{ width: "10vh", height: "10vh" }}>
             <Dropdown.Toggle>
@@ -55,9 +56,9 @@ function QuackMenu() {
         </div>
         <div>
           <img
-            style={{borderRadius: "50%", background: "transparent"}}
+            style={{ borderRadius: "50%", background: "transparent" }}
             className="user-duck"
-            src={!user ? 'assets/guest.png ' : user.photoURL}
+            src={!user ? "assets/guest.png " : user.photoURL}
             alt="blue rubber duckie that represents the user"
           ></img>
         </div>
