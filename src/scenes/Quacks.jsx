@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { UserContext } from '../App'
 import { Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 
 function Quacks() {
@@ -8,10 +9,10 @@ function Quacks() {
     const [quacks, setQuacks] = useState([])
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        if (user){
+    function getQuacks(){
+      if (user){
         setLoading(true)
-        fetch(`https://api-senior-dev-duckie.web.app/quacks/${user.uid}`,)
+        fetch(`https://api-senior-dev-duckie.web.app/quacks/${user.uid}`)
         .then(res => res.json())
         .then(data => {
             setQuacks(data)  
@@ -25,7 +26,26 @@ function Quacks() {
             setQuacks([])
             setLoading(false)
         }
+    }
+    useEffect(() => {
+        getQuacks()
     }, [user])
+  
+   function deleteQuack(quackId) {
+      fetch(`https://api-senior-dev-duckie.web.app/quacks/${quackId}`, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data => {
+        getQuacks()
+        setLoading(false)
+      })
+      .catch(err => {
+        console.log('error deleting quack:', err)
+        setLoading(false)
+      })
+    }
+
     const greeting = (!user)
     ? 'Guest'
     : user.displayName || 'User!'
@@ -48,7 +68,8 @@ function Quacks() {
           href={quack.URL}
         />
       </a>
-      {/* <h3>Created:</h3> */}
+      <Button onClick={() => deleteQuack(quack.id)} variant="danger">Delete</Button>
+       <h3>Created:{new Date(quack.created._seconds * 1000).toLocaleDateString("en-US")}</h3>
       </div>
       ))}
         </Container>

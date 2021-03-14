@@ -46,7 +46,6 @@ function Duckies() {
         });
       })
       .then(() => {
-        console.log(newRecording);
         const metadata = { contentType: "audio/mpeg" };
         const audioRecordingRef = storageRef.child("recordings/" + fileName);
         audioRecordingRef.put(newRecording, metadata).then((snapshot) => {
