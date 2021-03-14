@@ -56,7 +56,10 @@ font-family: 'DotGothic16', sans-serif;
 }
 .banner {
   width: 110vh;
-  padding-bottom: 0%;
+}
+.quack-back-recordings{
+  display: inline-block;
+
 }
 
 button, button:hover, button:active {
@@ -117,10 +120,20 @@ a {
 .btn{
   border: none
 }
+
+@media screen and (min-width: 500px) and (max-width: 1025px) {
+  .banner {
+    width: 60vh;
+}  
+.green-duck {
+  width: 27vh;
+  height: auto;
+}
+
+}
 @media screen and (max-width: 500px) {
   .banner {
     width: 50vh;
-    padding-bottom: 0%;
 }
 .yellow-duck {
   width: 40vh;
@@ -143,4 +156,8 @@ body{
   background-position: center center;
   background-size: cover;
 }
+.h1, h1 {
+  font-size: 1.5rem;
 }
+}
+

@@ -59,7 +59,7 @@ function Quacks() {
         </img> 
         <h1 className='greeting' >Hello, {greeting} </h1>
         {quacks.map((quack) =>(
-        <div key={quack.id}>
+        <div className='quack-back-recordings' key={quack.id}>
         <a href={quack.URL} >
         <img
           className="green-duck"
@@ -68,8 +68,9 @@ function Quacks() {
           href={quack.URL}
         />
       </a>
-      <Button onClick={() => deleteQuack(quack.id)} variant="danger">Delete</Button>
-       <h3>Created:{new Date(quack.created._seconds * 1000).toLocaleDateString("en-US")}</h3>
+      <br/>
+       <h4>Created: {new Date(quack.created._seconds * 1000).toLocaleDateString("en-US")}</h4>
+      <Button onClick={() => deleteQuack(quack.id)} size='lg' variant="danger">Delete</Button>
       </div>
       ))}
         </Container>
