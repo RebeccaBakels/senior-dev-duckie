@@ -29,7 +29,7 @@ body{
 font-family: 'DotGothic16', sans-serif;
 }
 .yellow-duck{
-  width: 65vh;
+  width: 60vh;
   height: auto;
 }
 .red-duck{
@@ -49,7 +49,7 @@ font-family: 'DotGothic16', sans-serif;
   background: transparent;
 }
 .user-duck {
-  width: 10vh;
+  width: 12vh;
   background: transparent;
   display: flex;
   align-self: flex-end;
@@ -110,8 +110,9 @@ a {
 
 .login-container {
   background: rgba(222, 251, 255, 0.75);
-  padding: 5%;
-}
+  padding: 5%; 
+  width: min-content
+  }
 .dropdown-menu.show {
   display: block;
   background-color: #74baba;
@@ -123,17 +124,25 @@ a {
 
 @media screen and (min-width: 501px) and (max-width: 1025px) {
   .banner {
-    width: 60vh;
+    width: 60vh;   
 }  
 .green-duck {
   width: 27vh;
   height: auto;
+}
+.login-container {
+  background: rgba(222, 251, 255, 0.75);
+  padding: 5%;
 }
 
 }
 @media screen and (max-width: 500px) {
   .banner {
     width: 50vh;
+}
+.login-container {
+  background: rgba(222, 251, 255, 0.75);
+  padding: 5%;
 }
 .yellow-duck {
   width: 40vh;
