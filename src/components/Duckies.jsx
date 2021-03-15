@@ -79,7 +79,7 @@ function Duckies() {
 
   useEffect(() => {
     
-    navigator.getUserMedia(
+    navigator.mediaDevices.getUserMedia(
       { audio: true },
       () => {
         console.log("Permission Granted");
