@@ -25,7 +25,7 @@ function QuackModal(props) {
         <Modal.Title id="contained-modal-title-vcenter">Quack Back</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Copy and paste to send to your real duckie</h4>
+        <h4>Send to your real duckie</h4>
         <p id="quackBackText">{props.quackBack}</p>
       </Modal.Body>
       <Modal.Footer>
