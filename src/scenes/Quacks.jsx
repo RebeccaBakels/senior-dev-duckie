@@ -31,6 +31,7 @@ function Quacks() {
   }, [user]);
 
   function deleteQuack(quackId) {
+    setLoading(true);
     fetch(`https://api-senior-dev-duckie.web.app/quacks/${quackId}`, {
       method: "DELETE",
     })
@@ -59,6 +60,7 @@ function Quacks() {
        {loading && <Spinner animation="border" role="status">
           <span className="sr-only">Loading...</span>
         </Spinner>}
+        <br/>
         {quacks.map((quack) => (
           <div className="quack-back-recordings" key={quack.id}>
             <a href={quack.URL}>
