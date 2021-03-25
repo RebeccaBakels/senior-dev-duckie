@@ -16,7 +16,7 @@ const Signup = () => {
     setLoading(true);
     firebase
       .auth()
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((res) => {
         console.log("got back", res.user);
         setUser(res.user);

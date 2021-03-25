@@ -58,7 +58,7 @@ function QuackMenu() {
           <img
             style={{ borderRadius: "50%", background: "transparent" }}
             className="user-duck"
-            src={!user ? "assets/guest.png " : user.photoURL}
+            src={!user ? "assets/guest.png " : user.photoURL || "assets/logged.png"}
             alt="blue rubber duckie that represents the user"
           ></img>
         </div>

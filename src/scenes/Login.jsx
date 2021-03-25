@@ -62,46 +62,40 @@ const Login = () => {
         src="assets\LoginBanner.png"
         alt="white banner that says Login to Quack"
       ></img>
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <br />
-        <br />
+       <Form
+        noValidate validated={validated} onSubmit={handleSubmit}
+        >
+        <br/>
+        <br/>
         <Form.Group as={Row} controlId="formHorizontalEmail">
+       
+
           <Form.Label column sm={2}>
             Email
           </Form.Label>
           <Col sm={10}>
-            <Form.Control
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your email",
-                },
-              ]}
-            />
+            <Form.Control type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}
+            rules={[
+              {
+                required: true,
+                message: 'Please input your email',
+              },
+            ]} />
           </Col>
         </Form.Group>
-
+      
         <Form.Group as={Row} controlId="formHorizontalPassword">
           <Form.Label column sm={2}>
             Password
           </Form.Label>
           <Col sm={10}>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your password",
-                },
-              ]}
-            />
+            <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}
+            rules={[
+              {
+                required: true,
+                message: 'Please input your password',
+              },
+            ]} />
           </Col>
         </Form.Group>
 
@@ -110,25 +104,22 @@ const Login = () => {
             <Form.Check label="Remember me" />
           </Col>
         </Form.Group>
-
+      
         <Form.Group as={Row}>
           <Col sm={{ span: 10, offset: 2 }}>
-            <Button type="submit" size="lg" loading={loading}>
-              Login
-            </Button>
+            <Button type="submit" loading = {loading}>Login</Button>
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
           <Col sm={{ span: 10, offset: 2 }}>
-            <Button
-              ghost
-              type="primary"
-              size="lg"
-              loading={loading}
-              onClick={() => loginWithGoogle()}
-            >
-              Login with Google
-            </Button>
+          <Button ghost
+          type="primary"
+          loading={loading}
+          onClick={() => loginWithGoogle()}
+        >
+        Login with Google        
+        </Button>
+
           </Col>
         </Form.Group>
       </Form>
