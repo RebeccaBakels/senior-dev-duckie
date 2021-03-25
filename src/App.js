@@ -8,6 +8,7 @@ import Home from './scenes/Home'
 import Login from './scenes/Login'
 import Signup from './scenes/Signup'
 import Quacks from './scenes/Quacks'
+import MeetMe from './scenes/MeetMe'
 
 import { firebaseConfig } from "./config";
 firebase.initializeApp(firebaseConfig);
@@ -50,6 +51,7 @@ function App() {
         <Route path="/Login" component={Login}/>
         <Route path="/Signup" component={Signup}/>
         <Route path="/Quacks" component={Quacks}/>
+        <Route path="/MeetMe" component={MeetMe}/>
         <Route path="/" component={Home}/>
         </Switch>
     </div>

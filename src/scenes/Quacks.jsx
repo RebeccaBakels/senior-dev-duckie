@@ -63,7 +63,7 @@ function Quacks() {
         <br/>
         {quacks.map((quack) => (
           <div className="quack-back-recordings" key={quack.id}>
-            <a href={quack.URL}>
+            <a href={quack.URL} target="_blank">
               <img
                 className="green-duck"
                 src="assets\play.png"

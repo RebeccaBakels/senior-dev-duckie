@@ -121,6 +121,23 @@ a {
 .btn{
   border: none
 }
+.meet-me-bio{
+  width: 120vh
+}
+.meet-buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+.submit-form{
+display: flex;
+}
+.submit-duck{
+  width: 25vh;
+  height: auto;
+}
+.form-area{
+  width: 90vh;
+}
 
 @media screen and (min-width: 501px) and (max-width: 1025px) {
   .banner {
@@ -133,6 +150,16 @@ a {
 .login-container {
   background: rgba(222, 251, 255, 0.75);
   padding: 5%;
+}
+.meet-me-bio{
+  width: 70vh
+}
+.submit-duck{
+  width: 15vh;
+  height: auto;
+}
+.form-area{
+  width: 50vh;
 }
 
 }
@@ -168,5 +195,20 @@ body{
 .h1, h1 {
   font-size: 1.5rem;
 }
+.meet-me-bio{
+  width: 50vh
+}
+.meet-buttons{
+  width: fit-content;
+  flex-flow: wrap;
+}
+.submit-duck{
+  width: 13vh;
+  height: auto;
+}
+.form-area{
+  width: 30vh;
+}
+
 }
 
