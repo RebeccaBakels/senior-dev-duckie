@@ -49,11 +49,11 @@ function QuackMenu() {
                   <Dropdown.Item>
                     <Link to="/Quacks">My Quacks</Link>
                   </Dropdown.Item>
+                </>
+              )}
                   <Dropdown.Item>
                     <Link to="/MeetMe">Feedback</Link>
                   </Dropdown.Item>
-                </>
-              )}
             </Dropdown.Menu>
           </Dropdown>
         </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Form, Col, Button, Row, Container } from "react-bootstrap";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import { UserContext } from "../App";
 
 const Signup = () => {
@@ -36,7 +36,7 @@ const Signup = () => {
       .signInWithPopup(provider)
       .then((res) => {
         setUser(res.user);
-        console.log(res.user);
+        // console.log(res.user);
         setLoading(false);
         history.push("/");
       })

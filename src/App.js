@@ -1,7 +1,8 @@
 import React, {useState, createContext, useEffect} from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import firebase from 'firebase'
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 import QuackMenu from './components/QuackMenu'
 import Home from './scenes/Home'

@@ -36,7 +36,7 @@ const Login = () => {
       .signInWithPopup(provider)
       .then((res) => {
         setUser(res.user);
-        console.log(res.user);
+        // console.log(res.user);
         setLoading(false);
         history.push("/");
       })
