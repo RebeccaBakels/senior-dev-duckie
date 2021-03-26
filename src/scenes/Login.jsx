@@ -18,7 +18,7 @@ const Login = () => {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((res) => {
-        console.log("got back", res.user);
+        // console.log("got back", res.user);
         setUser(res.user);
         setLoading(false);
         history.push("/");

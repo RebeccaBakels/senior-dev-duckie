@@ -8,7 +8,6 @@ const [value, setValue] = useState('');
 
   function submitForm(event) {
     event.preventDefault();
-    console.log("submitted");
     fetch(slack, {
       method: "POST",
       mode: "no-cors",

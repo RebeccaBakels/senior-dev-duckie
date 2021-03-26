@@ -19,7 +19,6 @@ function Duckies() {
   const [modalShow, setModalShow] = useState(false);
 
   const start = () => {
-    console.log("in start");
     if (isBlocked) {
       console.log("Permission Denied");
     } else {

@@ -8,7 +8,7 @@ function QuackModal(props) {
   const copyToClipBoard = async (copyMe) => {
     try {
       await navigator.clipboard.writeText(copyMe);
-      setCopySuccess(console.log("copied"));
+      setCopySuccess("copied");
     } catch (err) {
       setCopySuccess("Failed to copy!");
     }
