@@ -4,17 +4,8 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { UserContext } from "../App";
 
 function QuackMenu() {
-  const { user, setUser, firebase } = useContext(UserContext);
-  function SignOut() {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        setUser(null);
-        localStorage.setItem("user", null);
-      })
-      .catch((error) => console.log(error));
-  }
+  const { user, SignOut } = useContext(UserContext);
+  
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between" }}>

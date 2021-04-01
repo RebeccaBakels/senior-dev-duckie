@@ -41,10 +41,21 @@ function App() {
     }
 
   },[])
+  
+  function SignOut() {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        setUser(null);
+        localStorage.setItem("user", null);
+      })
+      .catch((error) => console.log(error));
+  }
 
   return (
     <>
-    <UserContext.Provider value={{user, setUser, firebase}}>
+    <UserContext.Provider value={{user, setUser, firebase, SignOut}}>
       <Router>
     <QuackMenu/>
     <div className="App">

@@ -22,8 +22,8 @@
 
 body{
   background-image: url('assets/bg.png');
-  background-position: center center;
-  background-size: cover;
+  /* background-position: center center; */
+  background-size: contain;
 }
 .greeting {
 font-family: 'DotGothic16', sans-serif;
